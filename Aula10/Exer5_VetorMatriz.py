@@ -4,6 +4,7 @@ seed(1)
 
 lista = []
 cont = 0
+
 for i in range(1000):
     lista.append(random.randint(0, 10000))
 for j in lista:
