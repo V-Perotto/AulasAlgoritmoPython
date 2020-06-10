@@ -2,13 +2,21 @@ from random import seed
 import random
 seed(1)
 
-nLin = int(input('Digite o tamanho da Matriz [N, N]: '))
-cont = nLin
+nCol = int(input('Digite o tamanho da Matriz [ M , N ]: '))
+cont = nCol
+nLin = nCol
+aux = nCol
 matriz = []
+m = int(input('Selecione a quantidade de casas para percorrer: '))
+print()
+points = 0
+somaCol = int()
+maior = int()
+somaLin = int()
 
-for lin in range(nLin):
+for col in range(nCol):
     linha = []
-    for col in range(nLin):
+    for lin in range(nCol):
         linha.append(random.randint(0, 1000))
     matriz.append(linha)
 
@@ -16,13 +24,12 @@ while cont > 0:
     cont = cont - 1
     print(matriz[cont])
 
-m = int(input('Selecione a quantidade de casas para percorrer: '))
-points = 0
+for nCol in range(0, nCol, 1):
+    somaCol += matriz[nCol][m]
+for nLin in range(0, nLin, 1):
+    somaLin += matriz[m][nLin]
 
-for pos_i in range(nLin):
-    for pos_j in range(nLin):
-        for i in range(pos_i, m + 1, -1):
-            points = points + matriz[pos_i][i]
-        for j in range(pos_i, m + 1, +1):
-            points = points = matriz[pos_i][j]
-print(points)
+maior = somaCol + somaLin
+
+print('\nMatriz [', aux, ',', m, ']')
+print('Maior Valor:', maior, '')
