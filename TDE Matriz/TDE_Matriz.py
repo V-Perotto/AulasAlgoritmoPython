@@ -10,37 +10,19 @@ for lin in range(nLin):
     linha = []
     for col in range(nLin):
         linha.append(random.randint(0, 1000))
-        #calculo = calcularPontuacaoPosicao()
-        #for nCol in range(0, matriz, 1):
-        #    for cima in range(0, m):
-        #        pos_cima = cima
-        #for nCol in range(0, matriz, -1):
-        #   for baixo in range(0, m):
-        #        pos_baixo = baixo
-        #for nLin in range(0, matriz, -1):
-        #    for esquerda in range(0, m):
-        #        pos_esquerda = esquerda
-        #for nLin in range(0, matriz, 1):
-        #    for direita in range(0, m):
-        #        pos_direita = direita
     matriz.append(linha)
 
 while cont > 0:
     cont = cont - 1
     print(matriz[cont])
 
-# percorrer matriz
-# for das linhas
-#     for das colunas
-#          calcular pontuacao da posicao
-#          for pra ir pra esquerda
-#               somar pontuacao
-#          for pra ir pra direita
-#               somar pontuacao
-#          for pra ir pra baixo
-#               somar pontuacao
-#          for pra ir pra cima
-#               somar pontuacao
-#          verifica se a pontuacao eh maior que a maior pontuacao
-#               atualiza a posicao da maior pontuacao
-# # #
+m = int(input('Selecione a quantidade de casas para percorrer: '))
+points = 0
+
+for pos_i in range(nLin):
+    for pos_j in range(nLin):
+        for i in range(pos_i, m + 1, -1):
+            points = points + matriz[pos_i][i]
+        for j in range(pos_i, m + 1, +1):
+            points = points = matriz[pos_i][j]
+print(points)
