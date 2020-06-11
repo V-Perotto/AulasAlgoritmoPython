@@ -17,8 +17,8 @@ def remover(a):
     lista.remove(a)
     return
 
-# def listar()
-#     print(lista)
+def listar():
+    print(lista)
 
 def filtrar(a):
     for i in range(len(lista)):
